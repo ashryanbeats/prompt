@@ -1,9 +1,9 @@
 <section id="make-prompt">
-	<form>
+	<form ng-submit="submitPrompt()">
 		<div class="form-group">
 			<label for="make-prompt-field">Make a prompt</label>
 			<input ng-model="newPrompt" type="text" id="make-prompt-field" class="form-control">
 		</div>
-		<button ng-submit="submitPrompt()" class="btn btn-primary">Submit your prompt</button>
+		<button class="btn btn-primary">Submit your prompt</button>
 	</form>
 </section>

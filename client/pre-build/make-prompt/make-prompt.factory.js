@@ -8,6 +8,6 @@ app.factory('MakePromptFactory', function($http) {
     };
 
     return {
-    	submitPrompt: submitPrompt;
+    	submitPrompt: submitPrompt
     }
 });

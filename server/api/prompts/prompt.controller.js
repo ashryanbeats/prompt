@@ -25,6 +25,7 @@ module.exports = {
   },
 
   create: function(req, res, next) {
+    console.log("hi POST /");
     Prompt
       .create(req.body, function(err, prompt){
         if(err) return next(err);
