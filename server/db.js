@@ -1,6 +1,6 @@
 var Promise = require('bluebird');
 var chalk = require('chalk');
-var dbName = "meaniscule-app";
+var dbName = "prompt-app";
 
 var DATABASE_URI = "mongodb://localhost:27017/" + dbName;
 

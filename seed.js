@@ -11,11 +11,71 @@ var path = require('path');
 var mongoose = require('mongoose');
 var startDb = require('./server/db');
 var Nodemodule = require('./server/api/modules/nodemodule.model.js');
+var Prompt = require('./server/api/prompts/prompt.model.js');
 var chalk = require('chalk');
 
 var moduleNamesArray;
+var promptObjects = [
+  {
+    text: "A rusty pen",
+    user: "Ash",
+    rating: {
+      upvotes: 4,
+      downvotes: 3 
+    }
+  },
+  {
+    text: "Free fall",
+    user: "R2D2",
+    rating: {
+      upvotes: 5,
+      downvotes: 2
+    }
+  },
+  {
+    text: "The feel of the sun on your face",
+    user: "Han",
+    rating: {
+      upvotes: 3,
+      downvotes: 5
+    }
+  },
+  {
+    text: "The silence before dawn",
+    user: "Leia",
+    rating: {
+      upvotes: 3,
+      downvotes: 3
+    }
+  },
+  {
+    text: "A special gift",
+    user: "C3P0",
+    rating: {
+      upvotes: 1,
+      downvotes: 0
+    }
+  },
+]
 
-startDb.then(function() {
+startDb
+  .then(function() {
+    Prompt.create(promptObjects[0]);
+  })
+  .then(function() {
+    Prompt.create(promptObjects[1]);
+  })
+  .then(function() {
+    Prompt.create(promptObjects[2]);
+  })
+  .then(function() {
+    Prompt.create(promptObjects[3]);
+  })
+  .then(function() {
+    Prompt.create(promptObjects[4]);
+  })
+  .then(function() {
+
   // Get all module names
   fs.readdirAsync(__dirname + '/node_modules/')
     // Get package.json content for all modules
