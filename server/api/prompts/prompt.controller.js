@@ -1,20 +1,20 @@
 var mongoose = require('mongoose');
-var NodeModule = require('./nodemodule.model');
+var Prompt = require('./prompt.model');
 
 module.exports = {
   index: function (req, res) {
-    NodeModule
+    Prompt
       .find()
       .exec()
-      .then(function(nodeModules) {
-        res.send(nodeModules);
+      .then(function(prompts) {
+        res.send(prompts);
       });
  },
  create: function(req, res, next) {
-    NodeModule
-      .create(req.body, function(err, nodeModule){
+    Prompt
+      .create(req.body, function(err, prompt){
         if(err) return next(err);
-        res.send(nodeModule);
+        res.send(prompt);
       });
   } 
 }

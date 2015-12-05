@@ -19,7 +19,7 @@ var schema = new mongoose.Schema({
   }
 });
 
-var NodeModule = mongoose.model('Nodemodule', schema);
+var Prompt = mongoose.model('Prompt', schema);
 
-module.exports = NodeModule;
+module.exports = Prompt;
 

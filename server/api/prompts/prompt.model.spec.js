@@ -5,9 +5,9 @@ var expect = require('chai').expect;
 var Promise = require('bluebird');
 var mongoose = require('mongoose');
 
-var Nodemodule = require('./nodemodule.model.js');
+var Prompt = require('./prompt.model.js');
 
-describe('Nodemodule model', function () {
+describe('Prompt model', function () {
   before('Connect to db', function (done) {
     if (mongoose.connection.db) return done();
     mongoose.connect(dbURI, done);
@@ -18,16 +18,16 @@ describe('Nodemodule model', function () {
   });
 
   it('should exist', function () {
-      expect(Nodemodule).to.be.a('function');
+      expect(Prompt).to.be.a('function');
   });
 
-  describe('Nodemodule creation', function() {
+  describe('Prompt creation', function() {
 
-    it('should create a module in the db', function(done){
+    it('should create a prompt in the db', function(done){
 
-      Nodemodule.create({ title: "express", repoUrl: "http://github.com/express" })
+      Prompt.create({ text: "Hi!"})
         .then(function(data) {
-          Nodemodule.findById(data).exec()
+          Prompt.findById(data).exec()
             .then(function(data) {
               expect(data).to.be.a('object');
               done();
