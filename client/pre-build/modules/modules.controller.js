@@ -5,11 +5,14 @@ app.controller('ModulesController', function($scope, $http, ModulesFactory) {
 
     ModulesFactory.getNodeModules()
       .then(function(modules) {
-        $scope.nodeModules = modules;
         
-        if (!$scope.nodeModules.length) {
+        if (!modules.length) {
           $scope.defaultMessage = defaultMessage;
         }
+        else {
+          $scope.nodeModules = modules;
+        }
       });
+      
   });
 });

@@ -5,11 +5,14 @@ app.controller('PromptController', function($scope, $http, PromptFactory) {
 
     PromptFactory.getPrompts()
       .then(function(prompts) {
-        $scope.prompts = prompts;
         
-        if (!$scope.prompts.length) {
+        if (!prompts.length) {
           $scope.defaultMessage = defaultMessage;
         }
+        else {
+          $scope.prompts = prompts;
+        }
+        
       });
   });
 });
