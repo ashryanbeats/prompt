@@ -3,7 +3,8 @@ var Prompt = require('./prompt.model');
 
 module.exports = {
   
-  index: function(req, res, next) {
+  index: function(req, res) {
+    console.log('index api hit');
     Prompt
       .find()
       .exec()
@@ -12,7 +13,8 @@ module.exports = {
       });
   },
 
-  random: function(req, res, next)  {
+  random: function(req, res)  {
+    console.log('random api hit');
     Prompt
       .find()
       .exec()

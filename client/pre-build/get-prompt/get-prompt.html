@@ -1,11 +1,15 @@
 <section id="get-prompt">
   <h1>Get a prompt</h1>
 
-  I contain these prompts:
+  <p><strong>I contain these prompts:</strong></p>
   <ul>
     <li ng-repeat="prompt in prompts">
       {{ prompt.text }}
     </li>
   </ul>
-  {{ defaultMessage }}
+  <p>{{ defaultAllMessage }}</p>
+
+  <p><strong>Here's a random prompt:</strong></p>
+  <p>{{ randomPrompt }}</p>
+  <p>{{ defaultRandomMessage }}</p>
 </section>
