@@ -6,7 +6,7 @@ app.controller('MakePromptController', function($scope, $http, MakePromptFactory
     console.log("clicked");
     if ($scope.newPrompt) {
       console.log("will submit", $scope.newPrompt);
-      MakePromptFactory.submitPrompt($scope.newPrompt);
+      MakePromptFactory.submitPrompt({text: $scope.newPrompt});
     }
   }
 
