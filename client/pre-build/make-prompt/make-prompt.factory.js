@@ -13,8 +13,7 @@ app.factory('MakePromptFactory', function($http) {
     //     });
     // };
 
-    // return {
-    // 	getAllPrompts: getAllPrompts,
-    // 	getRandomPrompt: getRandomPrompt
-    // }
+    return {
+    	name: "make"
+    }
 });
