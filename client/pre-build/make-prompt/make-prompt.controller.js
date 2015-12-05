@@ -1,7 +1,11 @@
 app.controller('MakePromptController', function($scope, $http, MakePromptFactory) {
 
-  const defaultRandomMessage = 'Error: we didn\'t get a prompt back.';
+  $scope.newPrompt = "";
 
-  $scope.name = MakePromptFactory.name;
+  $scope.submit = function() {
+    if ($scope.newPrompt) {
+      MakePromptFactory.submitPrompt($scope.newPrompt);
+    }
+  }
 
 });
