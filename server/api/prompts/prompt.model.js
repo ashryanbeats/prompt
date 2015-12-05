@@ -2,12 +2,20 @@
 var mongoose = require('mongoose');
 
 var schema = new mongoose.Schema({
-  title: {
+  text: {
     type: String,
     required: true
   },
-  repoUrl: {
+  user: {
     type: String
+  },
+  rating: {
+  	upvotes: Number,
+  	downvotes: Number
+  },
+  date: {
+  	type: Date,
+  	default: Date.now
   }
 });
 
