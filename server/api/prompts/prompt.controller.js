@@ -4,7 +4,6 @@ var Prompt = require('./prompt.model');
 module.exports = {
   
   index: function(req, res) {
-    console.log('index api hit');
     Prompt
       .find()
       .exec()
@@ -14,7 +13,6 @@ module.exports = {
   },
 
   random: function(req, res)  {
-    console.log('random api hit');
     Prompt
       .find()
       .exec()
@@ -25,7 +23,6 @@ module.exports = {
   },
 
   create: function(req, res) {
-    console.log("hi POST /");
     Prompt
       .create(req.body, function(err, prompt){
         if(err) return next(err);
