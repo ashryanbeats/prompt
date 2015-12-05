@@ -2,7 +2,8 @@
 	<form ng-submit="submitPrompt()">
 		<div class="form-group">
 			<label for="make-prompt-field">Make a prompt</label>
-			<input ng-model="newPrompt" type="text" id="make-prompt-field" class="form-control">
+			<input ng-model="newPrompt" maxlength="50" type="text" id="make-prompt-field" class="form-control">
+			<small>{{ newPrompt.length || 0 }}</small>
 		</div>
 		<button class="btn btn-primary">Submit your prompt</button>
 	</form>
