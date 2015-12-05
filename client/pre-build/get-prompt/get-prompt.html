@@ -1,5 +1,5 @@
 <section id="get-prompt">
-  <button class="btn btn-primary">Get a radnom prompt</button>
+  <button ng-click="getRandomPrompt()" class="btn btn-primary">Get a random prompt</button>
 
   <p ng-if="randomPrompt">{{ randomPrompt }}</p>
   <p ng-if="defaultRandomMessage">{{ defaultRandomMessage }}</p>
