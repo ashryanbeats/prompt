@@ -18,14 +18,12 @@ app.controller('PromptController', function($scope, $http, PromptFactory) {
 
     PromptFactory.getRandomPrompt()
       .then(function(prompt) {
-        console.log(prompt.length);
 
         if (!prompt) {
           $scope.defaultRandomMessage = defaultRandomMessage;
         }
         else {
           $scope.randomPrompt = prompt.text;
-
         }
 
       });
