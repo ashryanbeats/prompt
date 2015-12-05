@@ -1,15 +1,6 @@
 <section id="get-prompt">
-  <h1>Get a prompt</h1>
+  <button class="btn btn-primary">Get a radnom prompt</button>
 
-  <p><strong>I contain these prompts:</strong></p>
-  <ul>
-    <li ng-repeat="prompt in prompts">
-      {{ prompt.text }}
-    </li>
-  </ul>
-  <p>{{ defaultAllMessage }}</p>
-
-  <p><strong>Here's a random prompt:</strong></p>
-  <p>{{ randomPrompt }}</p>
-  <p>{{ defaultRandomMessage }}</p>
+  <p ng-if="randomPrompt">{{ randomPrompt }}</p>
+  <p ng-if="defaultRandomMessage">{{ defaultRandomMessage }}</p>
 </section>
