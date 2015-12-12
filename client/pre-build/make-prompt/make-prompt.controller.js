@@ -1,6 +1,6 @@
 app.controller('MakePromptController', function($scope, $http, MakePromptFactory) {
 
-  $scope.maxlength = 50;
+  $scope.maxlength = 100;
 
   $scope.submitPrompt = function() {
     if ($scope.newPrompt && $scope.newPrompt.length <= $scope.maxlength) {
@@ -11,6 +11,9 @@ app.controller('MakePromptController', function($scope, $http, MakePromptFactory
         .catch(function(err) {
           console.log("Error submitting the prompt: ", err);
         });
+    }
+    else {
+      console.log("Prompt is too long.");
     }
   }
 
